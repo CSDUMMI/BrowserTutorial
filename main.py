@@ -78,6 +78,16 @@ def showExercise(tutorial,lesson_index):
 
 @app.route("/<tutorial>/<lesson_index>/")
 def showLesson(tutorial,lesson_index):
+    lesson = json.load (open("tutorials.json"))
+    lesson = lesson[tutorial]
+    lesson = lesson["lessons"]
+    lesson = lesson[int(lesson_index)]
+    return render_template  (
+                            "lesson.html",
+                            lesson = lesson,
+                            tutorial = tutorial,
+                            lesson_index = lesson_index
+                            )
 
 if __name__ == '__main__':
     app.run()
