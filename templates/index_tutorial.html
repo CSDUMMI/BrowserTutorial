@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title> {{ tutorial }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/basic.css')}}">
   </head>
   <body>
-    <center>
+    <center class="content">
       <h1> Lessons in {{ tutorial }} </h1>
-      {% for lesson in lessons %}
-      <a href="/{{ tutorial }}/{{ lesson.name }}">
+      {% for index,lesson in lessons %}
+      <a href="/{{ tutorial }}/{{ index }}">
         <h3> {{ lesson.title }} </h3>
       </a>
        <p> {{ lesson. description }} </p>

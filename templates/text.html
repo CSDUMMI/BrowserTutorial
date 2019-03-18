@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title> {{ tutorial }} | {{ lesson }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/basic.css')}}">
+  </head>
+  <body>
+    <div class="content">
+      {{ text | safe }}
+    </div>
+  </body>
+</html>

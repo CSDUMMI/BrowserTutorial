@@ -2,12 +2,16 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <title> Tutorials </title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="{{ url_for('static',filename='styles/basic.css')}}">
     </head>
     <body>
-      <center>
+      <center class="content">
         <h1> Tutorials </h1>
-        {% for tutorial in tutorials %}
-        <a href="/{{ tutorial.title }}">
+        {% for title, tutorial in tutorials %}
+        <a href="/{{ title }}">
           <h3> {{ tutorial.title }} </h3>
         </a>
         <p> {{ tutorial.description }} </p>
