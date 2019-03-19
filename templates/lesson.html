@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title> {{ lesson.title }}</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background-color: #2f3129;
+      }
+      iframe {
+        height: 100%;
+        width: 49%;
+        position: sticky;
+      }
+      #exercise {
+        float: right;
+      }
+    </style>
   </head>
   <body>
-    <frameset cols="*,*">
-      <frame src="/{{ tutorial }}/{{ lesson_index }}/text" />
-      <frame src="/{{ tutorial }}/{{ lesson_index }}/exercise" />
-    </frameset>
+    <iframe src="/{{ tutorial }}/{{ lesson_index }}/text"> </iframe>
+    <iframe src="/{{ tutorial }}/{{ lesson_index }}/exercise"></iframe>
   </body>
 </html>

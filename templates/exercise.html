@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ACE in Action</title>
-<style type="text/css" media="screen">
-    #editor {
+  <title>ACE in Action</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/basic.css')}}">
+  <style type="text/css" media="screen">
+      #editor {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 10%;
+          left: 0;
+      }
+      #check_button {
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-</style>
+        top: 95%;
+        right: 40%;
+        background-color: inherit;
+        color: white;
+      }
+  </style>
 </head>
 <body>
-
-<div id="editor">
+  <div id="editor">
 {{ code  | safe }}
-</div>
+  </div>
+  <div id="error_messages"></div>
+  <button id="check_button"> Check results </button>
+  <script src="{{ url_for('static',filename='ace/ace.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script>
+      let editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/python");
+  </script>
+  <script type="text/javascript">
+    function check_results() {
+      let result_code = document.getElementById("editor").textContent;
+      const check_req = new XMLHttpRequest();
+      check_req.onload = (e) => {
+        if ( this.responseText == "True") {
+          // Check was successfull
+        } else {
+          // this.responseText := Error Message
+          let error_output = document.getElementById("error_messages");
+          error_output.textContent = this.responseText;
+        }
+      }
+      check_req.open( "GET","/{{ tutorial }}/{{ lesson_index }}/check?code="
+                      + result_code
+                    );
+      check_req.send();
+    }
 
-<script src="{{ url_for('static',filename='ace/ace.js')}}" type="text/javascript" charset="utf-8"></script>
-<script>
-    let editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/python");
-</script>
+    check_button = document.getElementById("check_button");
+    check_button.addEventListener("click",check_results);
+  </script>
 </body>
 </html>

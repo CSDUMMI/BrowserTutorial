@@ -4,9 +4,15 @@ body {
   color:white;
 }
 
+button {
+  background-color: #272822;
+  border: 1px;
+  color: white;
+  width:50%;
+}
 .content {
   background-color: #272822;
   padding: 0.5%;
   size:100%;
-  color white;
+  color: white;
 }

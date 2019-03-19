@@ -73,7 +73,9 @@ def showExercise(tutorial,lesson_index):
     code_template = lesson["code"]
     return render_template  (
                             "exercise.html",
-                            code=code_template
+                            code=code_template,
+                            tutorial = tutorial,
+                            lesson_index = lesson_index
                             )
 
 @app.route("/<tutorial>/<lesson_index>/")
@@ -88,6 +90,15 @@ def showLesson(tutorial,lesson_index):
                             tutorial = tutorial,
                             lesson_index = lesson_index
                             )
+
+@app.route("/<tutorial>/<lesson_index>/check")
+def check_code(tutorial,lesson_index):
+    test = json.load (open("tutorials.json"))
+    test = test[tutorial]
+    test = test["lessons"]
+    test = test[lesson_index]
+    test = test["test"]
+    
 
 if __name__ == '__main__':
     app.run()
