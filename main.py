@@ -98,7 +98,8 @@ def check_code(tutorial,lesson_index):
     test = test["lessons"]
     test = test[lesson_index]
     test = test["test"]
-    
+    # Get all the local variables and functions in the code in the request
+    # then run test on that dict
 
 if __name__ == '__main__':
     app.run()
