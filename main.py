@@ -1,6 +1,6 @@
 #! /usr/bin/python3
-from flask import Flask, render_template
-import json
+from flask import Flask, render_template, request
+import json, importlib
 import markdown
 
 app = Flask(__name__)
@@ -16,7 +16,9 @@ tutorials.json:
                 "title":Lesson Title,
                 "text": Markdown of the Text of Lesson,
                 "code": Code to be shown before editing by learner,
-                "test": Test for the code returned by the learner
+                "test": Test for the code returned by the learner,
+                "modules": Modules avaible to the learner and the test
+                "vars": Variables that should be set before the learners code is executed
             }
         ]
     }
@@ -91,15 +93,42 @@ def showLesson(tutorial,lesson_index):
                             lesson_index = lesson_index
                             )
 
+def getLocalOf(code,lcls):
+    eval(compile(code,"<string>","exec"),None,lcls)
+    return locals()
+
 @app.route("/<tutorial>/<lesson_index>/check")
 def check_code(tutorial,lesson_index):
-    test = json.load (open("tutorials.json"))
-    test = test[tutorial]
-    test = test["lessons"]
-    test = test[lesson_index]
-    test = test["test"]
+    lesson  = json.load(open("tutorials.json"))[tutorial]["lessons"][int(lesson_index)]
+    modules = lesson["modules"]
+    vars    = lesson["vars"] # dict
+
+    for key in modules.keys():
+        modules[key] = importlib.import_module(modules[key])
+
+    modules.update(vars)
+
+    local_test = getLocalOf(open(   "tests/"
+                                    + tutorial
+                                    + "/test_"
+                                    + str(lesson_index)
+                                    + ".py")
+                                    .read(),modules)
+
+    print(local_test)
+
+    code = request.args.get("code")
+    if local_test["lcls"]['test_mode'] == "code":
+        # Give the local_test['test'] the locals of the code
+        local_results = getLocalOf(code,modules)
+        return local_test["lcls"]['test'](local_results)
+    elif local_test['test_mode'] == "text":
+        return local_test['test'](request.args.get("code"))
+    else:
+        return "Bad test"
+
     # Get all the local variables and functions in the code in the request
     # then run test on that dict
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")

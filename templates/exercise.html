@@ -4,6 +4,14 @@
   <title>ACE in Action</title>
   <link rel="stylesheet" href="{{ url_for('static',filename='styles/basic.css')}}">
   <style type="text/css" media="screen">
+      html,body {
+        background-color: #2f3129;
+        size:100%;
+        width: 100%;
+        height: 100%;
+        color:white;
+      }
+
       #editor {
           position: absolute;
           top: 0;
@@ -13,8 +21,12 @@
       }
       #check_button {
         position: absolute;
-        top: 95%;
-        right: 40%;
+        border: solid;
+        top: 94%;
+        bottom: 1%;
+        left: 40%;
+        width: 40%;
+        height: 5%;
         background-color: inherit;
         color: white;
       }
@@ -24,8 +36,8 @@
   <div id="editor">
 {{ code  | safe }}
   </div>
-  <div id="error_messages"></div>
-  <button id="check_button"> Check results </button>
+
+  <button id="check_button">Check</button>
   <script src="{{ url_for('static',filename='ace/ace.js')}}" type="text/javascript" charset="utf-8"></script>
   <script>
       let editor = ace.edit("editor");
@@ -34,16 +46,10 @@
   </script>
   <script type="text/javascript">
     function check_results() {
-      let result_code = document.getElementById("editor").textContent;
+      let result_code = ace.edit("editor").getValue();
       const check_req = new XMLHttpRequest();
       check_req.onload = (e) => {
-        if ( this.responseText == "True") {
-          // Check was successfull
-        } else {
-          // this.responseText := Error Message
-          let error_output = document.getElementById("error_messages");
-          error_output.textContent = this.responseText;
-        }
+        console.log ( this.responseText)
       }
       check_req.open( "GET","/{{ tutorial }}/{{ lesson_index }}/check?code="
                       + result_code
@@ -53,6 +59,7 @@
 
     check_button = document.getElementById("check_button");
     check_button.addEventListener("click",check_results);
+
   </script>
 </body>
 </html>

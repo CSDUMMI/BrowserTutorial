@@ -7,7 +7,9 @@
         "title":"101 Title",
         "text": "# Some of Lesson intro\nAlready ready Abt.",
         "code": "def foo():\n\treturn bar()",
-        "test": "def sampleTest():\nreturn True\n"
+        "test": "def sampleTest():\nreturn True\n",
+        "modules":{},
+        "vars":{"msg":"Hello, World!"}
       }
     ]
   }
