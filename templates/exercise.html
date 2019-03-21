@@ -52,7 +52,7 @@
         console.log ( this.responseText)
       }
       check_req.open( "GET","/{{ tutorial }}/{{ lesson_index }}/check?code="
-                      + result_code
+                      + encodeURIComponent(result_code)
                     );
       check_req.send();
     }
