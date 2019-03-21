@@ -7,7 +7,7 @@
       html,body {
         background-color: #2f3129;
         size:100%;
-        width: 100%;
+        width: 90%;
         height: 100%;
         color:white;
       }
@@ -22,11 +22,11 @@
       #check_button {
         position: absolute;
         border: solid;
-        top: 94%;
+        top: 91%;
         bottom: 1%;
         left: 40%;
-        width: 40%;
-        height: 5%;
+        width: 60%;
+        height: 8%;
         background-color: inherit;
         color: white;
       }
@@ -36,6 +36,7 @@
   <div id="editor">
 {{ code  | safe }}
   </div>
+
 
   <button id="check_button">Check</button>
   <script src="{{ url_for('static',filename='ace/ace.js')}}" type="text/javascript" charset="utf-8"></script>
@@ -48,12 +49,23 @@
     function check_results() {
       let result_code = ace.edit("editor").getValue();
       const check_req = new XMLHttpRequest();
-      check_req.onload = (e) => {
-        console.log ( this.responseText)
-      }
+
       check_req.open( "GET","/{{ tutorial }}/{{ lesson_index }}/check?code="
-                      + encodeURIComponent(result_code)
+                      + encodeURIComponent(result_code),
+                      true
                     );
+
+      check_req.addEventListener('load',(e) => {
+        if ( check_req.response != "Success" ) {
+            window.open('error?e='+encodeURIComponent(check_req.response),
+                        'popup',
+                        'width=600,height=600'
+                      );
+        } else {
+          success()
+        }
+
+      });
       check_req.send();
     }
 

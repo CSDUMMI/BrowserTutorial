@@ -93,9 +93,26 @@ def showLesson(tutorial,lesson_index):
                             lesson_index = lesson_index
                             )
 
-def getLocalOf(code,lcls):
-    eval(compile(code,"<string>","exec"),None,lcls)
-    return locals()
+@app.route("/<tutorial>/<lesson_index>/error")
+def showError(tutorial,lesson_index):
+    error_msg = request.args.get("e")
+    return render_template("error.html",
+                            error=error_msg
+                        )
+
+def getLocalOf(code,locs):
+
+    try:
+        eval(compile(code,"<string>","exec"),None,locs)
+    except Exception as e:
+        return { "error":e}
+
+    locs = locals()
+    locs["locs"]["code"] = locs["code"]
+    locs = locs["locs"]
+
+    return locs
+
 
 @app.route("/<tutorial>/<lesson_index>/check")
 def check_code(tutorial,lesson_index):
@@ -115,20 +132,24 @@ def check_code(tutorial,lesson_index):
                                     + ".py")
                                     .read(),modules)
 
-    print(local_test)
+    local_test["code"] = local_test["code"]
 
     code = request.args.get("code")
-    if local_test["lcls"]['test_mode'] == "code":
+    if local_test['test_mode'] == "code":
         # Give the local_test['test'] the locals of the code
         local_results = getLocalOf(code,modules)
-        return local_test["lcls"]['test'](local_results)
+
+        if local_results.get("error") != None:
+            return str(local_results["error"])
+
+        return local_test['test'](local_results)
+
     elif local_test['test_mode'] == "text":
         return local_test['test'](request.args.get("code"))
+
     else:
         return "Bad test"
 
-    # Get all the local variables and functions in the code in the request
-    # then run test on that dict
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
