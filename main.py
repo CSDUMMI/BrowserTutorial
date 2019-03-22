@@ -150,6 +150,15 @@ def check_code(tutorial,lesson_index):
     else:
         return "Bad test"
 
+@app.route("/edit/")
+def addNewTutorial():
+    return render_template("addNewTutorial.html")
+
+@app.route("/edit/<tutorial>/")
+def addNewLesson(tutorial):
+    info = json.load(open("tutorials.json"))
+    if info.get(tutorial) == None:
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
