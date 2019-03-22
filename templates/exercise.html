@@ -68,6 +68,16 @@
       });
       check_req.send();
     }
+s
+    function success() {
+      // Function to call if the Lesson was completed.
+      // Make the check_button into a link to the next Lesson, orif it is the
+      // last lesson of the tutorial, direct back to the front page.
+      check_button.textContent = " Test bestanden | Weiter? ";
+      check_button.removeEventListener("click",check_results);
+      check_button.addEventListener("click",
+                                    () => parent.location.href="{{ next_lesson }}");
+    }
 
     check_button = document.getElementById("check_button");
     check_button.addEventListener("click",check_results);

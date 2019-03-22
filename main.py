@@ -70,14 +70,23 @@ def showExercise(tutorial,lesson_index):
     lesson = json.load (open("tutorials.json"))
     lesson = lesson[tutorial]
     lesson = lesson["lessons"]
-    lesson = lesson[int(lesson_index)]
 
+    lesson_index = int(lesson_index)
+    # Get HREF to the next lesson
+    if lesson_index == len(lesson)-1:
+        # Is last lesson in tutorial
+        next_lesson = "/" # Go back to Tutorial index
+    else:
+        next_lesson = "/" + tutorial + "/" + str(lesson_index+1) + "/"
+
+    lesson = lesson[lesson_index]
     code_template = lesson["code"]
     return render_template  (
                             "exercise.html",
                             code=code_template,
                             tutorial = tutorial,
-                            lesson_index = lesson_index
+                            lesson_index = lesson_index,
+                            next_lesson=next_lesson
                             )
 
 @app.route("/<tutorial>/<lesson_index>/")
@@ -150,6 +159,7 @@ def check_code(tutorial,lesson_index):
     else:
         return "Bad test"
 
+"""
 @app.route("/edit/")
 def addNewTutorial():
     return render_template("addNewTutorial.html")
@@ -159,6 +169,6 @@ def addNewLesson(tutorial):
     info = json.load(open("tutorials.json"))
     if info.get(tutorial) == None:
 
-
+"""
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
