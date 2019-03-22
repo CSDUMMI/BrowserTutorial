@@ -5,6 +5,9 @@ import markdown
 
 app = Flask(__name__)
 
+# Set this once you edit the server or you don't want anybody to use editing capability
+# Thus, no more than one can edit at a time, no race-condition
+isEditing = False
 """
 tutorials.json:
 {
@@ -159,7 +162,31 @@ def check_code(tutorial,lesson_index):
     else:
         return "Bad test"
 
-"""
+
+@app.route("/edit/addTutorial")
+def addTutorial():
+    if isEditing == True:
+        return "Error: Can't currently edit web server, try later!"
+    else:
+        isEditing = True
+
+    name = request.args.get("name")
+    title = request.args.get("title")
+    info = json.load(open("tutorials.json"))
+
+    if info.get(name) != None:
+        isEditing = False
+        return "Error: Tutorial with that name already exists!"
+    else:
+        info[name] = {
+            "title":title,
+            "lessons":[]
+        }
+        json.dump(info,open("tutorial.json","w+"))
+        isEditing == False
+        return ""
+
+    return ""
 @app.route("/edit/")
 def addNewTutorial():
     return render_template("addNewTutorial.html")
@@ -167,8 +194,8 @@ def addNewTutorial():
 @app.route("/edit/<tutorial>/")
 def addNewLesson(tutorial):
     info = json.load(open("tutorials.json"))
-    if info.get(tutorial) == None:
 
-"""
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0")

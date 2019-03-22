@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title> Neues Tutorial</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/basic.css') }}">
+  </head>
+  <body>
+    <center>
+      <h1> Erstelle ein neues Tutorials mit eigenen Lessons </h1>
+      <br>
+      <input name="tutorial_name" id="tutorial_name" type="text">
+        Tutorial Name ( Link kompatible)
+      </input>
+      <br>
+      <input name="tutorial_title" id="tutorial_title" type="text">
+        Tutorial Title ( nicht Link kompatible )
+      </input>
+      <br>
+      <button id="add_tutorial"> Füge Tutorial hinzu </button>
+      <script>
+        function check_compatible(link) {
+          return !(/[$%&()\\\/#+*§`´<> |]/.test(link)) ? link : false;
+        }
+        function addTutorial() {
+          let add_tutorial_button = document.getElementById('add_tutorial');
+          let tutorial_name_input = document.getElementById('tutorial_name');
+          let tutorial_title_input = document.getElementById('tutorial_title');
+          let tutorial_name = check_compatible(tutorial_name_input.value);
+
+          if (tutorial_name == false) {
+            add_tutorial_button.textContent = " Name ist nicht Link kompatible"
+          } else {
+            let tutorial_title = tutorial_title_input.value;
+            let req_add_tutorial = new XMLHttpRequest();
+            req_add_tutorial.open("GET",window.location.href + "addTutorial?name="
+                                        + tutorial_name
+                                        + "&title="
+                                        + encodeURIComponent(tutorial_title)
+                                      )
+            req_add_tutorial.addEventListener('load',() => {
+              if ( /Error/.test(req_add_tutorial.response)) {
+                add_tutorial_button.textContent = req_add_tutorial.response;
+              } else {
+                add_tutorial_button.textContent = "Erstellt | Weiter zu Lessons?"
+                add_tutorial_button.removeEventListener("click",addTutorial);
+                add_tutorial_button.addEventListener("click",
+                                                      () => window.location.href
+                                                      = "/edit/"
+                                                        + tutorial_name
+                                                        + "/");
+              }
+            })
+            req_add_tutorial.send();
+          }
+        }
+        document
+        .getElementById("add_tutorial")
+        .addEventListener('click',addTutorial);
+      </script>
+    </center>
+  </body>
+</html>

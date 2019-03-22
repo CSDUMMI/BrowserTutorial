@@ -10,6 +10,11 @@ button {
   color: white;
   width:50%;
 }
+input {
+  background-color: #272822;
+  color:white;
+  margin: 1%;
+}
 .content {
   background-color: #272822;
   padding: 0.5%;
