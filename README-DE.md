@@ -14,6 +14,7 @@ Du musst vielleicht `pip3` mit `sudo` ausführen ( `sudo pip3 ...` )
 Danach führe diesen Befehl in dem Projekt Ordner aus, wenn du nicht diese Ausgabe kriegst,
 versuche Python 3.7 neu zu installieren oder `pip3` noch einmal laufen lassen.
 ```bash
+$ ./main.py
  * Serving Flask app "main" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -21,4 +22,4 @@ versuche Python 3.7 neu zu installieren oder `pip3` noch einmal laufen lassen.
  * Debug mode: off
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
-Jetzt öffne `http://0.0.0.0:5000/ in deinem Webbrowser
+Jetzt öffne `http://0.0.0.0:5000/` in deinem Webbrowser
