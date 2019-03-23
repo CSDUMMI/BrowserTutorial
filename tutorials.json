@@ -1,1 +1,23 @@
-{"Intro_python_2": {"lessons": [], "title": "Intro Python 2. Teil"}, "Intro_Python": {"lessons": [], "title": "Intro Python 3.7 "}, "SampleTutorial": {"lessons": [{"modules": {}, "code": "def add(x,y):\n    return x+y", "vars": {"msg": "Hello, World!"}, "text": "# Add function\nDefine a function that adds ", "title": "101 Title"}], "title": "Sample Tutorial"}}
+{
+    "Intro_python_2": {
+        "lessons": [],
+        "title": "Intro Python 2. Teil"
+    },
+    "Intro_Python": {
+        "lessons": [],
+        "title": "Intro Python 3.7 "
+    },
+    "SampleTutorial": {
+        "lessons": [{
+            "modules": {},
+            "code": "def add(x,y):\n    return x+y",
+            "vars": {
+                "msg": "Hello, World!"
+            },
+            "text": "# Add function\nDefine a function that adds ",
+            "title": "101 Title",
+            "test":"tests.SampleTutorial.test_0"
+        }],
+        "title": "Sample Tutorial"
+    }
+}

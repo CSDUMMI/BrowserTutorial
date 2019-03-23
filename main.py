@@ -19,7 +19,7 @@ tutorials.json:
                 "title":Lesson Title,
                 "text": Markdown of the Text of Lesson,
                 "code": Code to be shown before editing by learner,
-                "test": Test for the code returned by the learner,
+                "test": Test file Module reference,
                 "modules": Modules avaible to the learner and the test
                 "vars": Variables that should be set before the learners code is executed
             }
@@ -115,16 +115,11 @@ def showError(tutorial,lesson_index):
 def getLocalOf(code,locs):
 
     try:
-        eval(compile(code,"<string>","exec"),None,locs)
+        exec(code,locs)
     except Exception as e:
         return { "error":e}
 
-    locs = locals()
-    locs["locs"]["code"] = locs["code"]
-    locs = locs["locs"]
-
     return locs
-
 
 @app.route("/<tutorial>/<lesson_index>/check")
 def check_code(tutorial,lesson_index):
@@ -132,31 +127,27 @@ def check_code(tutorial,lesson_index):
     modules = lesson["modules"]
     vars    = lesson["vars"] # dict
 
+    namespace_exercise = {}
+    # Import modules in modules
     for key in modules.keys():
-        modules[key] = importlib.import_module(modules[key])
+        namespace_exercise[key] = importlib.import_module(modules[key])
 
-    modules.update(vars)
-
-    local_test = getLocalOf(open(   "tests/"
-                                    + tutorial
-                                    + "/test_"
-                                    + str(lesson_index)
-                                    + ".py")
-                                    .read(),modules)
-
-    local_test["code"] = local_test["code"]
+    # Add the variables to the global namespace in the exercise code
+    for key in vars.keys():
+        namespace_exercise[key] = vars[key]
 
     code = request.args.get("code")
-    if local_test['test_mode'] == "code":
+    test_module = importlib.import_module(lesson["test"])
+
+    if test_module.test_mode == "code":
         # Give the local_test['test'] the locals of the code
-        local_results = getLocalOf(code,modules)
+        locs_exercises = getLocalOf(code,namespace_exercise)
 
-        if local_results.get("error") != None:
+        if locs_exercises.get("error") != None:
             return str(local_results["error"])
+        return test_module.test(locs_exercises)
 
-        return local_test['test'](local_results)
-
-    elif local_test['test_mode'] == "text":
+    elif test_module.test_mode == "text":
         return local_test['test'](request.args.get("code"))
 
     else:

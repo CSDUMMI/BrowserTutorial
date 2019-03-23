@@ -7,9 +7,9 @@ test_mode:
 """
 test_mode = "code"
 
-def test(locals_vars):
+def test(local_vars):
     # Test if add is defined
-    if locals_vars.get("add") == None:
+    if local_vars.get("add") == None:
         return "Failure: No add function defined"
     elif locals_vars["add"](5,5) == 10:
         return "Success"
