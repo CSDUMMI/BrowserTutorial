@@ -1,16 +1,1 @@
-{
-  "SampleTutorial": {
-    "title": "Sample Tutorial",
-    "lessons":
-    [
-      {
-        "title":"101 Title",
-        "text": "# Some of Lesson intro\nAlready ready Abt.",
-        "code": "def foo():\n\treturn bar()",
-        "test": "def sampleTest():\nreturn True\n",
-        "modules":{},
-        "vars":{"msg":"Hello, World!"}
-      }
-    ]
-  }
-}
+{"Intro_Python": {"title": "Intro Python 3.7 ", "lessons": []}, "SampleTutorial": {"title": "Sample Tutorial", "lessons": [{"title": "101 Title", "text": "# Some of Lesson intro\nAlready ready Abt.", "code": "def foo():\n\treturn bar()", "test": "def sampleTest():\nreturn True\n", "vars": {"msg": "Hello, World!"}, "modules": {}}]}}

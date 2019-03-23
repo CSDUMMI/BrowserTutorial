@@ -1,0 +1,1 @@
+{"Intro_Python": {"title": "Intro Python 3.7 ", "lessons": []}, "SampleTutorial": {"title": "Sample Tutorial", "lessons": [{"code": "def foo():\n\treturn bar()", "test": "def sampleTest():\nreturn True\n", "title": "101 Title", "modules": {}, "vars": {"msg": "Hello, World!"}, "text": "# Some of Lesson intro\nAlready ready Abt."}]}}

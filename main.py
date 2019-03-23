@@ -165,6 +165,7 @@ def check_code(tutorial,lesson_index):
 
 @app.route("/edit/addTutorial")
 def addTutorial():
+    global isEditing
     if isEditing == True:
         return "Error: Can't currently edit web server, try later!"
     else:
@@ -182,7 +183,7 @@ def addTutorial():
             "title":title,
             "lessons":[]
         }
-        json.dump(info,open("tutorial.json","w+"))
+        json.dump(info,open("tutorials.json","w+"))
         isEditing == False
         return ""
 
@@ -194,7 +195,20 @@ def addNewTutorial():
 @app.route("/edit/<tutorial>/")
 def addNewLesson(tutorial):
     info = json.load(open("tutorials.json"))
+    info = info.get(tutorial)
 
+    if info == None:
+        return "Error: Tutorial not created yet"
+
+    lessons = info["lessons"]
+    return render_template( "edit_list_lessons.html",
+                            lessons = lessons,
+                            tutorial = tutorial )
+
+    # Attention:
+    # Nobody but the admin
+    # with access to tutorials.json
+    # directly can remove anything!
 
 
 if __name__ == '__main__':
