@@ -201,9 +201,34 @@ def addNewLesson(tutorial):
         return "Error: Tutorial not created yet"
 
     lessons = info["lessons"]
+    for lesson_index in range(0,len(lessons)):
+        lessons[lesson_index]["index"] = lesson_index
+
     return render_template( "edit_list_lessons.html",
                             lessons = lessons,
                             tutorial = tutorial )
+@app.route("/edit/<tutorial>/<lesson_index>")
+def editLesson(tutorial,lesson_index):
+    global isEditing
+
+    if isEditing == False:
+        isEditing = True # Look writing rights on the server
+    else:
+        return "Cant currently edit anything"
+
+    lesson = json.load(open("tutorials.json"))
+    lesson = lesson[tutorial]["lessons"][int(lesson_index)]
+    text = lesson["text"]
+    code = lesson["code"]
+    # vars, modules and the test need admin privs
+    # because it needs direct access to the Files
+    # This is only an Editor for the Frontend stuff
+    return render_template( 'edit_lesson.html',
+                            lesson = lesson,
+                            text = text,
+                            code = code )
+
+
 
     # Attention:
     # Nobody but the admin

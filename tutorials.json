@@ -1,1 +1,22 @@
-{"Intro_Python": {"title": "Intro Python 3.7 ", "lessons": []}, "SampleTutorial": {"title": "Sample Tutorial", "lessons": [{"title": "101 Title", "text": "# Some of Lesson intro\nAlready ready Abt.", "code": "def foo():\n\treturn bar()", "test": "def sampleTest():\nreturn True\n", "vars": {"msg": "Hello, World!"}, "modules": {}}]}}
+{
+    "Intro_Python": {
+        "title": "Intro Python 3.7 ",
+        "lessons": []
+    },
+    "Intro_python_2": {
+        "title": "Intro Python 2. Teil",
+        "lessons": []
+    },
+    "SampleTutorial": {
+        "title": "Sample Tutorial",
+        "lessons": [{
+            "vars": {
+                "msg": "Hello, World!"
+            },
+            "title": "101 Title",
+            "code": "def add(x,y):\n\t#Start here",
+            "modules": {},
+            "text": "# The add function\n Define an add function that returns the sum of its two parameters"
+        }]
+    }
+}

@@ -8,7 +8,7 @@
   <body>
     <h1> All Lessons you can edit:</h1>
     {% for lesson in lessons %}
-    <a href="edit/{{ tutorial }}/{{ lesson_index }}">
+    <a href="/edit/{{ tutorial }}/{{ lesson.index }}">
       <h3> {{ lesson.title }} </h3>
     </a>
     {% endfor %}
