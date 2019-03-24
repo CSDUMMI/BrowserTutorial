@@ -56,8 +56,14 @@
                     );
 
       check_req.addEventListener('load',(e) => {
-        parent.getElementById("text_frame");
-        response.split("")
+        text_frame = parent.getElementById("text_frame");
+        response_parts = check_req.response.split("&output=");
+        output  = response_parts[1];
+        error   = response_parts[0]; // If error == "". No Error, success
+
+        if (error == "") {
+          success();
+        }
       });
       check_req.send();
     }
