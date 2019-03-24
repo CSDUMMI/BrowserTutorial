@@ -56,15 +56,8 @@
                     );
 
       check_req.addEventListener('load',(e) => {
-        if ( check_req.response != "Success" ) {
-            window.open('error?e='+encodeURIComponent(check_req.response),
-                        'popup',
-                        'width=600,height=600'
-                      );
-        } else {
-          success()
-        }
-
+        parent.getElementById("text_frame");
+        response.split("")
       });
       check_req.send();
     }
