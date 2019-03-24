@@ -11,5 +11,8 @@
             "vars": { "msg":"Hello, World!"}
       }
     ]
+  },
+  "Ein einfaches cat Programm": {
+    "title": "Schreibe ein Programm das eine Datei liest und "
   }
 }

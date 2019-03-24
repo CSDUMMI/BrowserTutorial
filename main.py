@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 from flask import Flask, render_template, request
-import json, importlib
+import json, importlib, sys, io
 import markdown
 
 app = Flask(__name__)
@@ -112,6 +112,7 @@ def showError(tutorial,lesson_index):
 
 def getLocalOf(code,locs):
 
+    output_buffer = io.StringIO
     try:
         exec(code,locs)
     except Exception as e:
