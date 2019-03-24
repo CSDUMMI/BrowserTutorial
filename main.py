@@ -5,13 +5,11 @@ import markdown
 
 app = Flask(__name__)
 
-# Set this once you edit the server or you don't want anybody to use editing capability
-# Thus, no more than one can edit at a time, no race-condition
-isEditing = False
+
 """
 tutorials.json:
 {
-    <tutorial> { <tutorial> : Must be compatible with links, no withespaces
+    <tutorial> {  Must be compatible with links, no withespaces
         "title": Title of the Tutorial,
         "description": Description of the Tutorial
         "lessons": [
@@ -144,7 +142,7 @@ def check_code(tutorial,lesson_index):
         locs_exercises = getLocalOf(code,namespace_exercise)
 
         if locs_exercises.get("error") != None:
-            return str(local_results["error"])
+            return str(locs_exercises["error"])
         return test_module.test(locs_exercises)
 
     elif test_module.test_mode == "text":
