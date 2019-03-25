@@ -20,7 +20,10 @@ input {
   size:100%;
   color: white;
 }
-
+code {
+  background-color: #647a6e;
+  border: 1px;
+}
 a {
   color: #AAAAAA;
 }
