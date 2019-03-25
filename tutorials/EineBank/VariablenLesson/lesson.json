@@ -1,0 +1,1 @@
+{"code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "title": "Variablen", "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n", "vars": {}, "test": "tests.EineBank.variablen.py", "modules": {}}

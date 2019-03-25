@@ -1,15 +1,1 @@
-{
-  "SampleTutorial": {
-    "title":"Sample Tutorial",
-    "lessons": [
-          {
-            "title": "Add Lesson",
-            "text":  "# Define `add` function\nReturn the sum of x and y",
-            "code":  "def add(x,y):\n\t# Code here",
-            "test":  "tests.SampleTutorial.add_test",
-            "modules": {},
-            "vars": { "msg":"Hello, World!"}
-          }
-    ]
-  }
-}
+{"EineBank": {"lessons": [{"vars": {}, "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n", "test": "tests.EineBank.variablen", "modules": {}, "code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "title": "Variablen"}, {"vars": {}, "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n", "test": "tests.EineBank.variablen", "modules": {}, "code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "title": "Variablen"}, {"vars": {}, "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n", "test": "tests.EineBank.variablen.py", "modules": {}, "code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "title": "Variablen"}], "title": "Programmiere eine Bank Software (Grundlagen Python)"}}
