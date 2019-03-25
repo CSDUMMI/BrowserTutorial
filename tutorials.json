@@ -9,12 +9,7 @@
             "test":  "tests.SampleTutorial.add_test",
             "modules": {},
             "vars": { "msg":"Hello, World!"}
-      }
+          }
     ]
-  },
-  "Arbeiten_mit_Daten_Grundlagen_Python_1": {
-    "title":"Arbeiten mit Daten Grundlagen Python 1",
-    "lessons": [
-    	{
-
+  }
 }
