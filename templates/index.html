@@ -10,8 +10,8 @@
     <body>
       <center class="content">
         <h1> Tutorials </h1>
-        {% for title, tutorial in tutorials %}
-        <a href="/{{ tutorial.name }}">
+        {% for name, tutorial in tutorials %}
+        <a href="/{{ name }}">
           <h3> {{ tutorial.title }} </h3>
         </a>
         <p> {{ tutorial.description }} </p>
