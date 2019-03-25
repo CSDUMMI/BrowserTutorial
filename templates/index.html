@@ -11,7 +11,7 @@
       <center class="content">
         <h1> Tutorials </h1>
         {% for title, tutorial in tutorials %}
-        <a href="/{{ title }}">
+        <a href="/{{ tutorial.name }}">
           <h3> {{ tutorial.title }} </h3>
         </a>
         <p> {{ tutorial.description }} </p>

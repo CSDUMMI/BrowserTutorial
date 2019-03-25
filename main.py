@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 from flask import Flask, render_template, request
-import json, importlib
+import json, importlib, sys, io, contextlib
 import markdown
 
 app = Flask(__name__)
@@ -110,14 +110,19 @@ def showError(tutorial,lesson_index):
                             error=error_msg
                         )
 
+
 def getLocalOf(code,locs):
+    output_buffer = io.StringIO()
+    with contextlib.redirect_stdout(output_buffer):
+        try:
+            exec(code,locs)
+        except Exception as e:
+            return { "error":e}
 
-    try:
-        exec(code,locs)
-    except Exception as e:
-        return { "error":e}
-
-    return locs
+    return {
+        "locals": locs,
+        "output": output_buffer.getvalue()
+        }
 
 @app.route("/<tutorial>/<lesson_index>/check")
 def check_code(tutorial,lesson_index):
@@ -139,12 +144,14 @@ def check_code(tutorial,lesson_index):
 
     if test_module.test_mode == "code":
         # Give the local_test['test'] the locals of the code
-        locs_exercises = getLocalOf(code,namespace_exercise)
+        results = getLocalOf(code,namespace_exercise):
+        locs_exercises = results["locals"]
+        output_exercises = results["output"]
 
         if locs_exercises.get("error") != None:
-            return str(locs_exercises["error"])
-        return test_module.test(locs_exercises)
+            return str(locs_exercises["error"]) + "&" + output_exercises
 
+        return test_module.test(locs_exercises) + "&" + output_exercises
     elif test_module.test_mode == "text":
         return local_test['test'](request.args.get("code"))
 

@@ -11,10 +11,20 @@
             "vars": { "msg":"Hello, World!"}
       }
     ]
+<<<<<<< HEAD
   },
   "Arbeiten_mit_Daten_Grundlagen_Python_1": {
     "title":"Arbeiten mit Daten Grundlagen Python 1",
     "lessons": [
     	{
 
+||||||| merged common ancestors
+  }
+=======
+  },
+  "Ein einfaches cat Programm": {
+    "title": "Schreibe ein Programm das eine Datei liest und ausgiebt",
+    "lessons": []
+  }
+>>>>>>> 88c34f6bf48fe7700517a1239f97c77ce82795fc
 }
