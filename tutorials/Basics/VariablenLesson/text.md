@@ -13,4 +13,4 @@ definiert eine Variable mit dem Namen `zahl` und gibt ihr den Wert `42`.
 Ergänze den Code auf der anderen Seite, so dass `eine_ganze_Zahl` den Wert `50`
 und die Variable `eine_dezimal_Zahl` den Wert `0.5` hat.
 Achtung: In Python schreibst du kein Komma sondern einen Punkt
-bei Dezimal, wie im Englischen.
+bei Dezimalzahlen, wie im Englischen.
