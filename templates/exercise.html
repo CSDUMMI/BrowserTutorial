@@ -56,14 +56,15 @@
                     );
 
       check_req.addEventListener('load',(e) => {
-        text_frame = parent.getElementById("text_frame");
-        response_parts = check_req.response.split("&output=");
-        output  = response_parts[1];
-        error   = response_parts[0]; // If error == "". No Error, success
-
-        if (error == "") {
-          success();
+        if ( check_req.response != "Success" ) {
+            window.open('error?e='+encodeURIComponent(check_req.response),
+                        'popup',
+                        'width=600,height=600'
+                      );
+        } else {
+          success()
         }
+
       });
       check_req.send();
     }
