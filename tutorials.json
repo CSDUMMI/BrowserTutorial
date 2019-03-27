@@ -1,7 +1,7 @@
 {
     "Basics": {
         "title": "Grundlagen Python",
-        "description": "Variablen, Listen, String, Zahlen"
+        "description": "Variablen, Listen, String, Zahlen",
         "lessons": [
             {
                 "test": "tutorials.Basics.Variablen.test",
@@ -19,4 +19,5 @@
                 "title": "Rechnen"
             }
         ]
+    }
 }
