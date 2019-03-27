@@ -1,12 +1,11 @@
 test_mode = "code"
 
 def test(local_vars):
-    if not (local_vars.get("eine_dezimal_Zahl") or local_vars.get("eine_ganze_Zahl")):
-        return "Fehler: eine_dezimal_Zahl oder eine_ganze_Zahl ist nicht definiert"
+    if not "x" in local_vars or not "zwei_hoch_acht" in local_vars:
+        return "Failure: x or zwei_hoch_acht isn't defined"
+    elif local_vars.get("x") != 50 % 8:
+        return "Failure: x isn't 50 modulo 8"
+    elif local_vars.get("zwei_hoch_acht") != 2 ** 8:
+        return "Failure zwei_hoch_acht isn't 2 to the 8th power"
     else:
-        if local_vars["eine_dezimal_Zahl"] != 0.5:
-            return "Fehler: eine_dezimal_Zahl ist nicht 0.5"
-        elif local_vars["eine_ganze_Zahl"] != 50:
-            return "Fehler: eine_ganze_Zahl ist nicht 50"
-        else:
-            return "Success"
+        return "Success"

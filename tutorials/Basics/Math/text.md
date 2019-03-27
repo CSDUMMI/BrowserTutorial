@@ -1,7 +1,8 @@
 # Rechnungen
-Überall wo du Zahlen einsetzen kannst,
-kannst du Variablen, die Zahlen speichern, einsetzen.
-Aber auch Rechnung kannst du mit Python machen.
+Zahlen in Variablen sind schön um sie zu speichern,
+aber es ist mindestens genau so wichtig sie verändern zu können
+
+Zum einen kannst du Variablen in Python auch zum Rechnen benutzten.
 Es gibt 6 einfache Rechenoperationen:
 `+  : Addition`
 `-  : Subtraktion`

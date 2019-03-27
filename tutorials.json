@@ -14,6 +14,7 @@
             {
                 "test":"tutorials.Basics.Math.test",
                 "text": "tutorials/Basics/Math/text.md",
+                "code": "tutorials/Basics/Math/code.py",
                 "vars": "tutorials/Basics/Math/vars.json",
                 "modules": "tutorials/Basics/Math/modules.json",
                 "title": "Rechnen"
