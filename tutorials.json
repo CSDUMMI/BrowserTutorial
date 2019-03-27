@@ -2,31 +2,34 @@
     "Basics": {
         "title": "Grundlagen Python",
         "description": "Variablen, Listen, String, Zahlen",
-        "lessons": [
-            {
-                "test": "tutorials.Basics.Variablen.test",
-                "text": "tutorials/Basics/Variablen/text.md",
-                "vars": "tutorials/Basics/Variablen/vars.json" ,
-                "title": "Variablen",
-                "code": "tutorials/Basics/Variablen/code.py",
-                "modules": "tutorials/Basics/Variablen/modules.json"
-            },
-            {
-                "test":"tutorials.Basics.Math.test",
-                "text": "tutorials/Basics/Math/text.md",
-                "code": "tutorials/Basics/Math/code.py",
-                "vars": "tutorials/Basics/Math/vars.json",
-                "modules": "tutorials/Basics/Math/modules.json",
-                "title": "Rechnen"
-            },
-	    {
-		"test":"tutorials.Basics.Variablen2.test",
-		"text":"tutorials/Basics/Variablen2/text.md",
-		"code":"tutorials/Basics/Variablen2/code.py",
-		"vars":"tutorials/Basics/Variablen2/vars.json",
-		"modules": "tutorials/Basics/Variablen2/modules.json",
-		"title":"Der Variablen zweiter Teil"
-	  }
-        ]
+        "lessons": [{
+            "test": "tutorials.Basics.Variablen.test",
+            "text": "tutorials/Basics/Variablen/text.md",
+            "vars": "tutorials/Basics/Variablen/vars.json",
+            "title": "Variablen",
+            "code": "tutorials/Basics/Variablen/code.py",
+            "modules": "tutorials/Basics/Variablen/modules.json"
+        }, {
+            "test": "tutorials.Basics.Math.test",
+            "text": "tutorials/Basics/Math/text.md",
+            "code": "tutorials/Basics/Math/code.py",
+            "vars": "tutorials/Basics/Math/vars.json",
+            "modules": "tutorials/Basics/Math/modules.json",
+            "title": "Rechnen"
+        }, {
+            "test": "tutorials.Basics.Variablen2.test",
+            "text": "tutorials/Basics/Variablen2/text.md",
+            "code": "tutorials/Basics/Variablen2/code.py",
+            "vars": "tutorials/Basics/Variablen2/vars.json",
+            "modules": "tutorials/Basics/Variablen2/modules.json",
+            "title": "Der Variablen zweiter Teil"
+        }, {
+            "test": "tutorials.Basics.Listen.test",
+            "text": "tutorials/Basics/Listen/text.md",
+            "code": "tutorials/Basics/Listen/code.py",
+            "vars": "tutorials/Basics/Listen/vars.json",
+            "modules": "tutorials/Basics/Listen/modules.json",
+            "title": "Listen, Sammlungen von Variablen"
+          }]
     }
 }
