@@ -18,7 +18,15 @@
                 "vars": "tutorials/Basics/Math/vars.json",
                 "modules": "tutorials/Basics/Math/modules.json",
                 "title": "Rechnen"
-            }
+            },
+	    {
+		"test":"tutorials.Basics.Variablen2.test",
+		"text":"tutorials/Basics/Variablen2/text.md",
+		"code":"tutorials/Basics/Variablen2/code.py",
+		"vars":"tutorials/Basics/Variablen2/vars.json",
+		"modules": "tutorials/Basics/Variablen2/modules.json",
+		"title":"Der Variablen zweiter Teil"
+	  }
         ]
     }
 }
