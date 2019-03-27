@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 from flask import Flask, render_template, request
-import json, importlib, sys, io, contextlib
+import json, importlib, sys
 import markdown
 
 app = Flask(__name__)
@@ -29,6 +29,7 @@ tutorials.json:
 @app.route("/")
 def index():
     tutorials = json.load(open("tutorials.json"))
+    print (tutorials)
     tutorials = zip(tutorials.keys(),tutorials.values())
     return render_template  (
                             "index.html",
@@ -58,7 +59,7 @@ def showText(tutorial,lesson_index):
     lesson = lesson["lessons"]
     lesson = lesson[int(lesson_index)]
 
-    text_html   = markdown.markdown(str(lesson["text"]))
+    text_html   = markdown.markdown(open(lesson["text"]).read())
     return render_template  (
                             "text.html",
                             text=text_html,
@@ -81,7 +82,7 @@ def showExercise(tutorial,lesson_index):
         next_lesson = "/" + tutorial + "/" + str(lesson_index+1) + "/"
 
     lesson = lesson[lesson_index]
-    code_template = lesson["code"]
+    code_template = open(lesson["code"]).read()
     return render_template  (
                             "exercise.html",
                             code=code_template,
@@ -123,8 +124,8 @@ def getLocalOf(code,locs):
 @app.route("/<tutorial>/<lesson_index>/check")
 def check_code(tutorial,lesson_index):
     lesson  = json.load(open("tutorials.json"))[tutorial]["lessons"][int(lesson_index)]
-    modules = lesson["modules"]
-    vars    = lesson["vars"] # dict
+    modules = json.load(open(lesson["modules"]))
+    vars    = json.load(open(lesson["vars"])) 
 
     namespace_exercise = {}
     # Import modules in modules

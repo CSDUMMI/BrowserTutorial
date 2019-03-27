@@ -29,4 +29,8 @@ Zu dieser Operation sagt man auch `x` hoch `y` wenn `x ** y`
 da steht. `x` und `y` sind Variablen.
 
 # Test it
-Neben den Variablen
+Rechne den Rest von `50` und `8` aus und speichere das Ergebnis
+in `x`
+Die Exponenten von `2` sind für Computer sehr wichtig.
+`2 ** 2 = 4`,  ` 2 ** 3 = 8` usw.
+Speichere `2` hoch `8` in der Variable `zwei_hoch_acht`.

@@ -1,1 +1,22 @@
-{"Basics": {"lessons": [{"code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "vars": {}, "modules": {}, "test": "tutorials.Basics.VariablenLesson.test", "title": "Variablen", "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n\nDu kannst alles m\u00f6gliche in einer Variable speichern,\nsolange Python sie versteht und du der Variable einen Namen gibts.\nMit dem Namen der Variable kannst du auf den Wert der Variable zugreifen\nund es ver\u00e4ndern.\n\n## Probier es aus\nDie Zeile\n`zahl = 42`\ndefiniert eine Variable mit dem Namen `zahl` und gibt ihr den Wert `42`.\nErg\u00e4nze den Code auf der anderen Seite, so dass `eine_ganze_Zahl` den Wert `50`\nund die Variable `eine_dezimal_Zahl` den Wert `0.5` hat.\nAchtung: In Python schreibst du kein Komma sondern einen Punkt\nbei Dezimalzahlen, wie im Englischen.\n"}, {"code": "eine_ganze_Zahl =\neine_dezimal_Zahl =\n", "title": "Variablen", "modules": {}, "test": "tutorials.Basics.VariablenLesson.test", "vars": {}, "text": "# Variablen\nVariablen sind Orte um deine Daten zu speichern.\n\nDu kannst alles m\u00f6gliche in einer Variable speichern,\nsolange Python sie versteht und du der Variable einen Namen gibts.\nMit dem Namen der Variable kannst du auf den Wert der Variable zugreifen\nund es ver\u00e4ndern.\n\n## Probier es aus\nDie Zeile\n`zahl = 42`\ndefiniert eine Variable mit dem Namen `zahl` und gibt ihr den Wert `42`.\nErg\u00e4nze den Code auf der anderen Seite, so dass `eine_ganze_Zahl` den Wert `50`\nund die Variable `eine_dezimal_Zahl` den Wert `0.5` hat.\nAchtung: In Python schreibst du kein Komma sondern einen Punkt\nbei Dezimal, wie im Englischen.\n"}], "title": "Grundlagen Python, Variablen, Listen, Strings, Zahlen"}}
+{
+    "Basics": {
+        "title": "Grundlagen Python",
+        "description": "Variablen, Listen, String, Zahlen"
+        "lessons": [
+            {
+                "test": "tutorials.Basics.Variablen.test",
+                "text": "tutorials/Basics/Variablen/text.md",
+                "vars": "tutorials/Basics/Variablen/vars.json" ,
+                "title": "Variablen",
+                "code": "tutorials/Basics/Variablen/code.py",
+                "modules": "tutorials/Basics/Variablen/modules.json"
+            },
+            {
+                "test":"tutorials.Basics.Math.test",
+                "text": "tutorials/Basics/Math/text.md",
+                "vars": "tutorials/Basics/Math/vars.json",
+                "modules": "tutorials/Basics/Math/modules.json",
+                "title": "Rechnen"
+            }
+        ]
+}
