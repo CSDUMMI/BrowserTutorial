@@ -1,7 +1,7 @@
 {
     "Basics": {
         "title": "Grundlagen Python",
-        "description": "Variablen, Listen, String, Zahlen",
+        "description": "Variablen, Listen, Strings und Zahlen",
         "lessons": [{
             "test": "tutorials.Basics.Variablen.test",
             "text": "tutorials/Basics/Variablen/text.md",
@@ -31,5 +31,17 @@
             "modules": "tutorials/Basics/Listen/modules.json",
             "title": "Listen, Sammlungen von Variablen"
           }]
+    },
+    "Complex_Programming": {
+      "title":"Komplexere Programmierung",
+      "description":"Mach das hier nach den Grundlagen",
+      "lessons": [{
+          "title":"Entscheidungen, Entschiedungswege",
+          "test": "tutorials.Complex_Programming.decisions.test",
+          "text": "tutorials/Complex_Programming/decisions/text.md",
+          "code": "tutorials/Complex_Programming/decisions/code.py",
+          "vars": "tutorials/Complex_Programming/decisions/vars.json",
+          "modules": "tutorials/Complex_Programming/decisions/modules.json"
+        }]
     }
 }
