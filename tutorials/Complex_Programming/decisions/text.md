@@ -29,9 +29,14 @@ Computer aufbauen.
 Die einfachste Operation heißt `not`, `not True` gibt `False`, `not False`
 gibt `True`.
 # Test it 1
-Wir werden etwas größeres ausprobieren, ich habe zwei Variablen
-definiert, `test_me_1` und `test_me_2`. Ich möchte wissen
-welchen Wert beide Variablen haben, wenn sie `True` beide
-`True` sind setze die Variable `ergebnis` auf `"Beides Wahr"`.
-Wenn einer von beiden `True` ist setze `ergebnis` auf `"Eines Wahr"`,
-wenn keiner von beiden `True` ist setze `ergebnis` auf `"Keines Wahr"`
+Jetzt können wir zum ersten mal die Modulo Operation nutzen.
+Eine interessante Eigenschaft von Modulo ist, dass der
+Rest von `x % 2` Null ist, wenn `x` eine gerade und nicht Null wenn
+ungerade.
+Ich habe eine `int`-Variable mit dem Namen `num` definiert,
+du sollst testen ob `num` eine gerade oder ungerade Zahl ist.
+Wenn `num` gerade ist setze `is_even` auf `True`, falls
+nicht setze `is_even` auf `False`.
+`even` heißt gerade auf Englisch, vieles in Programmierung ist auf
+Englisch, gewöhn dich daran.
+ 

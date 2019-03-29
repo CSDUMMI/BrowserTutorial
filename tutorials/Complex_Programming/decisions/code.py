@@ -1,2 +1,1 @@
-head = 
-tail =
+is_even =
