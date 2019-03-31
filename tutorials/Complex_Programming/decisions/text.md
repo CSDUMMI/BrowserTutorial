@@ -11,10 +11,14 @@ Deshalb gibt es in Python eine einfache Konstruktion,
 um das zu schaffen.
 
 ## If else
-    if x:
-      doSomething
-    else:
-      doSomethingElse
+<pre>
+  <code class="lang-python">
+if x:
+  doSomething
+else:
+  doSomethingElse
+  </code>
+</pre>
 Dieser Code prüft `x` und wenn `x` `True` ist wird der Code
 ausgeführt der einen Tab eingeschoben wurde bis zum
 `else:`, alles hinter `else` wird ausgeführt wenn `x` `False` ist.
@@ -28,15 +32,43 @@ gibt es auch für `bool` einige Grundlegende Operation auf denen heute alle
 Computer aufbauen.
 Die einfachste Operation heißt `not`, `not True` gibt `False`, `not False`
 gibt `True`.
-# Test it 1
-Jetzt können wir zum ersten mal die Modulo Operation nutzen.
-Eine interessante Eigenschaft von Modulo ist, dass der
-Rest von `x % 2` Null ist, wenn `x` eine gerade und nicht Null wenn
-ungerade.
-Ich habe eine `int`-Variable mit dem Namen `num` definiert,
-du sollst testen ob `num` eine gerade oder ungerade Zahl ist.
-Wenn `num` gerade ist setze `is_even` auf `True`, falls
-nicht setze `is_even` auf `False`.
-`even` heißt gerade auf Englisch, vieles in Programmierung ist auf
-Englisch, gewöhn dich daran.
- 
+Um zwei `bool`s zu verknüpfen gibt es zwei andere Operationen,
+`and` und `or`.
+## `and`
+Englisch für "und".
+<pre>
+  <code class="lang-python">
+if x and y:
+  # x ist True und y ist True
+else:
+  # x ist nicht True oder y ist nicht True
+  </code>
+</pre>
+Alles hinter `#` wird von Python ignoriert, damit
+kannst du etwas kommentieren. Und das `and` im
+`if` prüft, ob beide `bool`s links und rechts vom `and`
+`True` sind, und nur dann ist das Ergebnis `True`,
+sonst `False`.
+## `or`
+Englisch für "oder".
+<pre>
+  <code class="lang-python">
+if x or y:
+  # x ist True oder y ist True
+else:
+  # weder x noch y ist True
+  </code>
+</pre>
+`or` ist einfach `True`, falls eine oder beide `bool`s
+`True` sind.
+
+# Test it
+Du hast ein Spiel geschrieben und du willst
+kontrollieren, dass nur Spieler mit einer bestimmten XP
+auf ein Level zu greifen. Ich habe zwei Variablen definiert:
+- `xp` - `int`
+- `level_num` - `int`
+Für jedes Level brauchst du `level_num * 10` `xp`.
+Du sollst die Variable `has_enough_xp` definieren, die `True` ist,
+wenn `xp` für das Level reicht und wenn nicht setze die Variable
+`xp_necessary` auf die benötigte XP für einen Levelaufstieg.
