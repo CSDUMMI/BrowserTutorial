@@ -1,14 +1,8 @@
 # Entweder, oder
-Du hast bis jetzt sehr einfache Programme geschrieben,
-es wurde eine Zeile Code nach der anderen ausgeführt,
-und mag doch eine Zeile die andere beeinflussen,
-doch wenn du deinen bisherigen Code zweimal
-ausführst kommt immer das gleiche raus.
-Nun kommt es jedoch sehr oft vor, dass du
-Entscheidungen in deinen Programmen treffen willst,
-ob du nun eine Sache oder eine andere Sache tust.
-Deshalb gibt es in Python eine einfache Konstruktion,
-um das zu schaffen.
+Dein bisheriger Code war bisher sehr linear,
+keine Entscheidungen wurden in deinem
+Programm getroffen, also etwas in der Art:
+Wenn dies, tue das, sonst tue etwas anderes.
 
 ## If else
 <pre>
@@ -44,8 +38,7 @@ else:
   # x ist nicht True oder y ist nicht True
   </code>
 </pre>
-Alles hinter `#` wird von Python ignoriert, damit
-kannst du etwas kommentieren. Und das `and` im
+Das `and` im
 `if` prüft, ob beide `bool`s links und rechts vom `and`
 `True` sind, und nur dann ist das Ergebnis `True`,
 sonst `False`.
@@ -59,14 +52,25 @@ else:
   # weder x noch y ist True
   </code>
 </pre>
-`or` ist einfach `True`, falls eine oder beide `bool`s
-`True` sind.
-
+Wenn du sagst: "Ich komme, wenn du bezahlst oder sie bezahlt", so kommst du mit
+wenn entweder "du" oder "sie" bezahlt, es müssen nicht beide bezahlen sondern
+nur einer/eine von beiden.
+Genauso funktioniert `or` in Python es ist `True` wenn eine von beiden `bool`s
+oder beide `True` sind.
+In Code würde das Beispiel so aussehen:
+<pre>
+ <code class="lang-python">
+if du_bezahlst or sie_bezahlst:
+  komme_mit = True
+else:
+  komme_mit = False
+ </code>
+</pre>
 # Test it
 Du hast zwei Variablen, die eine Person beschreiben, die `bool`s `has_a_license` und `drives_a_car`,
 du willst jetzt kontrollieren, ob die Person eine Straftat begeht indem sie ein Auto fährt.
-Sie begeht keine wenn sie  eine Auto fährt und einen Führerschein, `has_a_license`,
-hat. Oder wenn sie überhaupt kein Auto fährt.
+Eine Person begeht natürlich nur dann eine Straftat, wenn sie Auto fährt *und* *keinen* Führerschein, `has_a_license`
+hat. 
 
 Ob die Person nun eine Straftat begeht, indem sie fährt, oder nicht sollst
 du in der Variable `commits_a_crime`.

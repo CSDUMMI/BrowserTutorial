@@ -1,9 +1,9 @@
 test_mode = "code"
 
 def test(local_vars):
-    if not "is_not_allowed_to_drive" in local_vars:
-        return "Failure: is_not_allowed_to_drive isn't defined"
-    elif local_vars["is_not_allowed_to_drive"] != local_vars["has_a_license"] and local_vars["drives_a_car"]:
-        return "Failure: is_not_allowed_to_drive is wrong."
+    if not ("commits_a_crime" in local_vars):
+        return "Failure: commits_a_crime isn't defined"
+    elif local_vars["commits_a_crime"] != (local_vars["drives_a_car"] and not local_vars["has_a_license"]):
+        return "Failure: commits_a_crime isn't defined right"
     else:
         return "Success"
