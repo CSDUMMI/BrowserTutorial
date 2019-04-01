@@ -65,9 +65,9 @@ else:
 # Test it
 Du hast ein Spiel geschrieben und du willst
 kontrollieren, dass nur Spieler mit einer bestimmten XP
-auf ein Level zu greifen. Ich habe zwei Variablen definiert:
-- `xp` - `int`
-- `level_num` - `int`
+auf ein Level zu greifen. Ich habe zwei Variablen definiert:<br>
+`xp` - `int` <br>
+`level_num` - `int` <br>
 Für jedes Level brauchst du `level_num * 10` `xp`.
 Du sollst die Variable `has_enough_xp` definieren, die `True` ist,
 wenn `xp` für das Level reicht und wenn nicht setze die Variable
