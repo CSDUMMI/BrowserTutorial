@@ -63,12 +63,10 @@ else:
 `True` sind.
 
 # Test it
-Du hast ein Spiel geschrieben und du willst
-kontrollieren, dass nur Spieler mit einer bestimmten XP
-auf ein Level zu greifen. Ich habe zwei Variablen definiert:<br>
-`xp` - `int` <br>
-`level_num` - `int` <br>
-Für jedes Level brauchst du `level_num * 10` `xp`.
-Du sollst die Variable `has_enough_xp` definieren, die `True` ist,
-wenn `xp` für das Level reicht und wenn nicht setze die Variable
-`xp_necessary` auf die benötigte XP für einen Levelaufstieg.
+Du hast zwei Variablen, die eine Person beschreiben, die `bool`s `has_a_license` und `drives_a_car`,
+du willst jetzt kontrollieren, ob die Person eine Straftat begeht indem sie ein Auto fährt.
+Sie begeht keine wenn sie  eine Auto fährt und einen Führerschein, `has_a_license`,
+hat. Oder wenn sie überhaupt kein Auto fährt.
+
+Ob die Person nun eine Straftat begeht, indem sie fährt, oder nicht sollst
+du in der Variable `commits_a_crime`.
