@@ -69,8 +69,8 @@ else:
 # Test it
 Du hast zwei Variablen, die eine Person beschreiben, die `bool`s `has_a_license` und `drives_a_car`,
 du willst jetzt kontrollieren, ob die Person eine Straftat begeht indem sie ein Auto fährt.
-Eine Person begeht natürlich nur dann eine Straftat, wenn sie Auto fährt *und* *keinen* Führerschein, `has_a_license`
-hat. 
+Eine Person begeht natürlich nur dann eine Straftat, wenn sie Auto fährt **und** **keinen** Führerschein, `has_a_license`
+hat.
 
 Ob die Person nun eine Straftat begeht, indem sie fährt, oder nicht sollst
 du in der Variable `commits_a_crime`.
