@@ -38,10 +38,19 @@ else:
   # x ist nicht True oder y ist nicht True
   </code>
 </pre>
-Das `and` im
-`if` prüft, ob beide `bool`s links und rechts vom `and`
-`True` sind, und nur dann ist das Ergebnis `True`,
-sonst `False`.
+Das `and` verhält sich ungefähr so: <br>
+"Wir können es bezahlen wenn du und ich beide etwas dazu geben".<br>
+Nun könnt ihr es nur bezahlen falls du etwas bezahlst und jemand anderes auch.
+`and` ist nur `True`, wenn beide `bool`s `True` sind.
+Das Beispiel in Python sähe ungefähr so aus:
+<pre>
+  <code class="python-lang">
+if du_bezahlst and er_bezahlt:
+  könnt_bezahlen = True
+else:
+  könnt_bezahlen = False
+  </code>
+</pre>
 ## `or`
 Englisch für "oder".
 <pre>
@@ -52,7 +61,8 @@ else:
   # weder x noch y ist True
   </code>
 </pre>
-Wenn du sagst: "Ich komme, wenn du bezahlst oder sie bezahlt", so kommst du mit
+Wenn du sagst:<br>"Ich komme, wenn du bezahlst oder sie bezahlt",<br>
+so kommst du mit
 wenn entweder "du" oder "sie" bezahlt, es müssen nicht beide bezahlen sondern
 nur einer/eine von beiden.
 Genauso funktioniert `or` in Python es ist `True` wenn eine von beiden `bool`s
