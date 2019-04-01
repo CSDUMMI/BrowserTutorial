@@ -45,10 +45,10 @@
         },{
             "title":"Vergleiche",
             "test": "tutorials.Complex_Programming.comparisions.test",
-            "text": "tutorials/Complex_Programming/decisions/text.md",
-            "code": "tutorials/Complex_Programming/decisions/code.py",
-            "vars": "tutorials/Complex_Programming/decisions/vars.json",
-            "modules": "tutorials/Complex_Programming/decisions/modules.json"
+            "text": "tutorials/Complex_Programming/comparisions/text.md",
+            "code": "tutorials/Complex_Programming/commparisons/code.py",
+            "vars": "tutorials/Complex_Programming/commparisons/vars.json",
+            "modules": "tutorials/Complex_Programming/commparisons/modules.json"
         }]
     }
 }
