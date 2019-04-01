@@ -39,6 +39,6 @@ In anderen Programmiersprachen haben bestimmte Teile einer
 Liste Namen, so gibt es zum Beispiel den `head`,
 das erste Element einer Liste, `tail` im Gegensatz ist die gesamte
 Liste, außer das erste Element.
-Ich habe wieder eine Variable `splitMe` definiert, du sollst
+Ich habe wieder eine Variable `split_me` definiert, du sollst
 den `head` und `tail` finden und die Werte in den gleichnamige Variablen
 zu speichern.
