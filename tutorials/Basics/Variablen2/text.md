@@ -33,7 +33,7 @@ beim Index `1` sonder beim Index `0`. Im allgemeinen fangen alle
 Index in der Informatik mit `0` an.
 
 # Test it
-Wir haben schon einen String definiert namens `message`,
+Ich haben schon einen String definiert, `message`,
 nun sollst du uns bestimmte Teile dieses Strings geben:
 Speichere die `4.` Stelle in der Variable `char_4`.
 `char` ist Englisch für Zeichen, Buchstabe.
