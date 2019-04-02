@@ -1,9 +1,37 @@
+import random
 test_mode = "code"
 
+def rand_vars():
+    vars = json.load(open("tutorials/Complex_Programming/comparisons/vars.json"))
+    vars["xp"] = random.randint(0,100)
+    vars["level_threshhold"] = random.randint(25,75)
+    json.dump(open("tutorials/Complex_Programming/comparisons/vars.json"),vars)
+
 def test(local_vars):
-    if not ("commits_a_crime" in local_vars):
-        return "Failure: commits_a_crime isn't defined"
-    elif local_vars["commits_a_crime"] != (local_vars["drives_a_car"] and not local_vars["has_a_license"]):
-        return "Failure: commits_a_crime isn't defined right"
+    vars = json.load(open("tutorials/Complex_Programming/comparisons/vars.json"))
+    old_xp = vars["xp"]
+    old_level = vars["level"]
+    level_threshhold = vars["level_threshhold"]
+    enough_xp = old_xp > level_threshhold
+
+    if enough_xp:
+        xp_is_reseted = local_vars["xp"] == 0
+        level_upgraded = local_vars["level"] == old_level +1
+
+        if not xp_is_reseted:
+            ret_msg ="Failure: xp wasn't reseted to zero"
+        elif not level_upgraded:
+            ret_msg ="Failure: level isn't upgraded"
+        else:
+            ret_msg ="Success"
     else:
-        return "Success"
+        xp_modified = local_vars["xp"] != old_xp
+        level_modified = local_vars["level"] != old_level
+
+        if xp_modified:
+            ret_msg ="Failure: You change xp, though you shouldn't"
+        elif level_modified:
+            ret_msg = "Failure: You changed level, though you shouldn't"
+
+    rand_vars()
+    return ret_msg
