@@ -48,16 +48,45 @@ is_not_greater_than = 1 > 2 # False
   </code>
 </pre>
 
+# Eine Kombination
+Wenn du zum Beispiel testen willst,
+ob du etwas kaufen kannst,
+nimmst du den Preis und dein Geld
+und falls du genauso viel oder mehr
+Geld hast, kannst du sie  kaufen.
+Da es viele solche Fälle gibt, wo du
+testen musst ob etwas gößer oder gleich,
+oder kleiner oder gleich ist.
+<pre>
+  <code class="python-lang">
+if geld >= preis:
+  kaufen()
+  </code>
+</pre>
+Code für das Beispiel oben,
+wenn du mehr oder gleich viel `geld`, wie
+`preis`, hast.
+
+Es gibt zwei solche Kombinationen:
+<pre>
+  <code class="python-lang">
+is_greater_than_or_equal = 1 >= 0.5 # True
+is_less_than_or_equal = 0.5 <= 1 # True
+  </code>
+</pre>
+
 # Test it
 Du hast ein Spiel entwickelt, wo jeder
 Spieler ein `level` hat und `xp`, beides
 `int` Werte.
 Wenn nun ein Spieler eine bestimmte Anzahl an XP hat
 kommt er zum nächsten Level.
-Die Variablen die ich schon definiert habe sind:<br>
-`level` Level Nummer des Spielers <br>
-`xp` XP des Spielers <br>
-`level_threshhold` XP die ein Spieler fürs nächste Level braucht.<br>
+Die Variablen die ich schon definiert habe sind:
+<ul>
+  <li>`level` Level Nummer des Spielers </li>
+  <li>`xp` XP des Spielers </li>
+  <li>`level_threshhold` XP die ein Spieler fürs nächste Level braucht.</li>
+</ul>
 Hier sollst du jetzt nicht neue Variablen definieren,
 sondern alte verändern.
 Die Aufgabe ist einfach:

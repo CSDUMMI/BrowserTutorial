@@ -1,18 +1,19 @@
-import random
+import random, json
+
 test_mode = "code"
 
 def rand_vars():
-    vars = json.load(open("tutorials/Complex_Programming/comparisons/vars.json"))
+    vars = json.load(open("tutorials/Complex_Programming/comparisions/vars.json"))
     vars["xp"] = random.randint(0,100)
     vars["level_threshhold"] = random.randint(25,75)
-    json.dump(open("tutorials/Complex_Programming/comparisons/vars.json"),vars)
+    open("tutorials/Complex_Programming/comparisions/vars.json","w+").write(json.dumps(vars))
 
 def test(local_vars):
-    vars = json.load(open("tutorials/Complex_Programming/comparisons/vars.json"))
+    vars = json.load(open("tutorials/Complex_Programming/comparisions/vars.json"))
     old_xp = vars["xp"]
     old_level = vars["level"]
     level_threshhold = vars["level_threshhold"]
-    enough_xp = old_xp > level_threshhold
+    enough_xp = old_xp >= level_threshhold
 
     if enough_xp:
         xp_is_reseted = local_vars["xp"] == 0

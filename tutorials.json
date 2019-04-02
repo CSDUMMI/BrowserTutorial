@@ -46,9 +46,9 @@
             "title":"Vergleiche",
             "test": "tutorials.Complex_Programming.comparisions.test",
             "text": "tutorials/Complex_Programming/comparisions/text.md",
-            "code": "tutorials/Complex_Programming/commparisons/code.py",
-            "vars": "tutorials/Complex_Programming/commparisons/vars.json",
-            "modules": "tutorials/Complex_Programming/commparisons/modules.json"
+            "code": "tutorials/Complex_Programming/comparisions/code.py",
+            "vars": "tutorials/Complex_Programming/comparisions/vars.json",
+            "modules": "tutorials/Complex_Programming/comparisions/modules.json"
         }]
     }
 }
