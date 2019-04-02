@@ -1,4 +1,5 @@
 {
-	"has_a_license": false,
-	"drives_a_car": true
+	"level":120,
+	"xp":100,
+	"level_threshhold":100
 }
