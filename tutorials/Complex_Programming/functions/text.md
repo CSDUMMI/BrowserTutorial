@@ -58,4 +58,6 @@ Sie besteht aus zwei Teilen:
 </ol>
 Um die Zeile auszuführen wird Python erst `foo` ausführen,
 es wird `bar` mit `a_var` als Argument ausführen und
-dann auf die
+dann auf die Zeile mit dem `return` treffen.
+Dort wird Python den Wert hinter `return` nehmen
+und in der Variable `result` speichern.
