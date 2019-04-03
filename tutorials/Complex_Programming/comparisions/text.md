@@ -77,15 +77,38 @@ is_less_than_or_equal = 0.5 <= 1 # True
 
 # Test it
 Du hast ein Spiel programmiert.
-Nun hast du eine Datenbank als
-`dict` definiert, `players`:
+In dem kann jeder Spieler XP sammeln
+und wenn er eine Schwelle, `xp_threshhold`,
+erreicht steigt er im Level auf.
+Du sollst die Funktion `gather_xp`
+definieren.
+Der Funktionskopf sieht so aus:
 <pre>
   <code class="python-lang">
-players = {
-  "player_name": {
-    "xp": XP des Spielers,
-    "level": Level des Spielers
-  }
+def gather_xp(new_xp,player_xp,player_level,level_threshhold):
+  </code>
+</pre>
+`new_xp` ist die Zahl der XP die der Spieler sammelte.<br>
+`player_xp` ist die Anzahl der schon gesammelte XP der Spieler.<br>
+`player_level` ist die Level Nummer des Spielers.<br>
+`level_threshhold` ist die XP die der Spieler braucht um das nächste Level zu erreichen.<br>
+Die Regeln für die `gather_xp` Funktion sind:
+<ol>
+  <li>Ein `player_xp` muss bei `new_xp` erhöht</li>
+  <li>Der Spieler soll im Level aufsteigen, wenn `player_xp >= level_threshhold`</li>
+  <li> Keine XP gehen verloren. </li>
+  <li> Wenn der Spieler noch mehr XP als `level_threshhold` hat bekommt er diese fürs nächste Level</li>
+  <li> Wenn er so viel XP kriegt um zwei oder drei oder vier oder usw. Level aufzusteigen, soll er das tuen.</li>
+</ol>
+*Hilfe zum letzten Punkt: Funktion können sich selbst aufrufen.*
+
+`gather_xp` soll ein `dict` mit drei Feldern zurückgeben
+<pre>
+  <code class="python-lang">
+return {
+  "player_level": Neues Level des Spielers,
+  "player_xp": Neue XP des Spielers,
+  "level_threshhold": Bleibt gleich wie level_threshhold, das Argument
 }
   </code>
 </pre>
