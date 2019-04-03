@@ -76,20 +76,16 @@ is_less_than_or_equal = 0.5 <= 1 # True
 </pre>
 
 # Test it
-Du hast ein Spiel entwickelt, wo jeder
-Spieler ein `level` hat und `xp`, beides
-`int` Werte.
-Wenn nun ein Spieler eine bestimmte Anzahl an XP hat
-kommt er zum nächsten Level.
-Die Variablen die ich schon definiert habe sind:
-<ul>
-  <li>`level` Level Nummer des Spielers </li>
-  <li>`xp` XP des Spielers </li>
-  <li>`level_threshhold` XP die ein Spieler fürs nächste Level braucht.</li>
-</ul>
-Hier sollst du jetzt nicht neue Variablen definieren,
-sondern alte verändern.
-Die Aufgabe ist einfach:
-1. Kontrolliere, ob der Spieler ein neues Level erreicht hat
-2. Wenn ja setze die `xp` auf `0` und erhöhe `level`
-3. Wenn nicht, tue nichts.
+Du hast ein Spiel programmiert.
+Nun hast du eine Datenbank als
+`dict` definiert, `players`:
+<pre>
+  <code class="python-lang">
+players = {
+  "player_name": {
+    "xp": XP des Spielers,
+    "level": Level des Spielers
+  }
+}
+  </code>
+</pre>
