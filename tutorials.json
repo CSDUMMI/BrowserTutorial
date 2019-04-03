@@ -42,7 +42,14 @@
           "code": "tutorials/Complex_Programming/decisions/code.py",
           "vars": "tutorials/Complex_Programming/decisions/vars.json",
           "modules": "tutorials/Complex_Programming/decisions/modules.json"
-        },{
+        }, {
+            "title":"Funktionen",
+            "test": "tutorials.Complex_Programming.functions.test",
+            "text": "tutorials/Complex_Programming/functions/text.md",
+            "code": "tutorials/Complex_Programming/functions/code.py",
+            "vars": "tutorials/Complex_Programming/functions/vars.json",
+            "modules": "tutorials/Complex_Programming/functions/modules.json"
+        }, {
             "title":"Vergleiche",
             "test": "tutorials.Complex_Programming.comparisions.test",
             "text": "tutorials/Complex_Programming/comparisions/text.md",
