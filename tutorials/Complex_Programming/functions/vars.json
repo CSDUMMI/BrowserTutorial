@@ -1,3 +1,13 @@
 {
-	"splitMe":[0,1,2,3,4,5,6,7,8,9,10]
+	"blog":{
+		"HelloWorld":{
+			"likes":123,
+			"dislikes":56,
+			"comments": [
+				"It's great",
+				"Well, it does somehow make sense",
+				"Don't get it"
+			]
+		}
+	}
 }
