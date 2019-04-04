@@ -75,40 +75,27 @@ is_less_than_or_equal = 0.5 <= 1 # True
   </code>
 </pre>
 
-# Test it
-Du hast ein Spiel programmiert.
-In dem kann jeder Spieler XP sammeln
-und wenn er eine Schwelle, `xp_threshhold`,
-erreicht steigt er im Level auf.
-Du sollst die Funktion `gather_xp`
-definieren.
-Der Funktionskopf sieht so aus:
-<pre>
-  <code class="python-lang">
-def gather_xp(new_xp,player_xp,player_level,level_threshhold):
-  </code>
-</pre>
-`new_xp` ist die Zahl der XP die der Spieler sammelte.<br>
-`player_xp` ist die Anzahl der schon gesammelte XP der Spieler.<br>
-`player_level` ist die Level Nummer des Spielers.<br>
-`level_threshhold` ist die XP die der Spieler braucht um das nächste Level zu erreichen.<br>
-Die Regeln für die `gather_xp` Funktion sind:
+## Test it
+Du hast eine Online-Umfrage gestartet.
+Bei einer Frage gab es zwei Wahlmöglichkeiten:
 <ol>
-  <li>Ein `player_xp` muss bei `new_xp` erhöht</li>
-  <li>Der Spieler soll im Level aufsteigen, wenn `player_xp >= level_threshhold`</li>
-  <li> Keine XP gehen verloren. </li>
-  <li> Wenn der Spieler noch mehr XP als `level_threshhold` hat bekommt er diese fürs nächste Level</li>
-  <li> Wenn er so viel XP kriegt um zwei oder drei oder vier oder usw. Level aufzusteigen, soll er das tuen.</li>
+    <li> Für </li>
+    <li> Gegen </li>
 </ol>
-*Hilfe zum letzten Punkt: Funktion können sich selbst aufrufen.*
-
-`gather_xp` soll ein `dict` mit drei Feldern zurückgeben
+Du definierst eine Funktion namens `analyse`.
+Die Funktion nimmt zwei Argumente:
 <pre>
-  <code class="python-lang">
-return {
-  "player_level": Neues Level des Spielers,
-  "player_xp": Neue XP des Spielers,
-  "level_threshhold": Bleibt gleich wie level_threshhold, das Argument
-}
-  </code>
+    <code class="python-lang">
+def analyse(votes_for,votes_against):
+    </code>
 </pre>
+Es gibt zwei mögliche Ergebnisse:
+<ol>
+    <li> Die Stimmen für gewinnen.</li>
+    <li>Die Stimmen gegen gewinnen.</li>
+</ol>
+Wenn es gleich viele für wie gegen Stimmen gibt,
+gewinnen die Gegen.
+
+Die Funktion gibt entweder den String:<br>
+`"for"` oder `"against"`

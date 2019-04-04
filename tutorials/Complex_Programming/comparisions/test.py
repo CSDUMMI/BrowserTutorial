@@ -2,32 +2,30 @@ import random
 
 test_mode = "code"
 
-def test_gather_xp(gather_xp_fun):
-    for i in range(10):
-        new_xp = random.randint(1,200)
-        player_xp = random.randint(0,150)
-        #No max level
-        player_level = random.randint(0,10)
-        level_threshhold = random.randint(50,150)
 
-        if player_xp >= level_threshhold:
-            new_player_level = player_level + 1
-            new_player_xp = (player_xp + new_xp) - level_threshhold
+def test_analyse(analyse):
+    # Test what happens if both votes are equal:
+    if analyse(50,50) != "against":
+        return "Failure: analyse doesn't return \"against\" by analyse(50,50)"
+    else:
+        # Test 10 random cases
+        for i in range(10):
+            votes_for = random.randint(1,100)
+            votes_against = random.randint(1,100)
+            result = analyse(votes_for,votes_against)
+            if votes_against >=  votes_for:
+                should_be_result = "against"
+            else:
+                should_be_result = "for"
             
+            if result != should_be_result:
+                break
         else:
-        result_dict = {
-            "player_level":
-        }
-        result = result_dict == gather_xp_fun(  new_xp,
-                                                player_xp,
-                                                player_level,
-                                                level_threshhold
-                                                )
-
-
-
-
-
+            return "Success"
+        return "Failure: analyse didn't work with some random cases"
 def test(local_vars):
-    gather_xp_fun = local_vars["gather_xp"]
-    return test_gather_xp(gather_xp_fun)
+    
+    if not "analyse" in local_vars:
+        return "Failure: analyse isn't defined"
+    else:
+        return test_analyse(local_vars["analyse"])        
