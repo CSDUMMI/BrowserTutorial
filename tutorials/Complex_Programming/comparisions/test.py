@@ -17,15 +17,19 @@ def test_analyse(analyse):
                 should_be_result = "against"
             else:
                 should_be_result = "for"
-            
+
             if result != should_be_result:
-                break
+                return """
+                    Failure: analyse should return: \"{}\"<br>
+                    But it returned \"{}\"<br>
+                    votes_for = {}<br>votes_against = {}
+                    """.format(should_be_result,result,votes_for,votes_against)
         else:
             return "Success"
-        return "Failure: analyse didn't work with some random cases"
+
 def test(local_vars):
-    
+
     if not "analyse" in local_vars:
         return "Failure: analyse isn't defined"
     else:
-        return test_analyse(local_vars["analyse"])        
+        return test_analyse(local_vars["analyse"])
