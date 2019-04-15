@@ -58,11 +58,11 @@
             "modules": "tutorials/Complex_Programming/comparisions/modules.json"
         }, {
             "title":"Schleifen",
-            "test": "tutorials.Complex_Programming.comparisions.test",
-            "text": "tutorials/Complex_Programming/comparisions/text.md",
-            "code": "tutorials/Complex_Programming/comparisions/code.py",
-            "vars": "tutorials/Complex_Programming/comparisions/vars.json",
-            "modules": "tutorials/Complex_Programming/comparisions/modules.json"
+            "test": "tutorials.Complex_Programming.loops.test",
+            "text": "tutorials/Complex_Programming/loops/text.md",
+            "code": "tutorials/Complex_Programming/loops/code.py",
+            "vars": "tutorials/Complex_Programming/loops/vars.json",
+            "modules": "tutorials/Complex_Programming/loops/modules.json"
         }]
     }
 }
